@@ -62,7 +62,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+      // $var1 = 'This is testing of pass';
+      // create variable to pass to views by using Yii
+      \Yii::$app->params['$var1'] = 'This is testing of pass';
+
+      //When you use session, you need to declare session
+      session_start();
+      // After declare session, you can create variable
+      $_SESSION['var2']= 'This is using session method';
+      // I use this session on footer page
+
+      return $this->render('index',['var1'=>$var1]);
     }
 
     /**
@@ -139,6 +149,7 @@ class SiteController extends Controller
           Yii::$app->session->setFlash('success','You have entered the data correctly');
         }
           return $this->render('userForm',['model'=>$model]);
-    
+
     }
+
 }

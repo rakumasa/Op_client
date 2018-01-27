@@ -11,6 +11,9 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
+
+
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -27,7 +30,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-<!-- import header by using variable -->
+<!-- import header by using variable (Partial view) -->
 <?=$this->render('header')?>
 
     <div class="container">
@@ -39,7 +42,7 @@ AppAsset::register($this);
     </div>
 </div>
 
-<!-- import footer by using variable -->
+<!-- import footer by using variable (Partial view) -->
 <?=$this->render('footer') ?>
 
 <?php $this->endBody() ?>

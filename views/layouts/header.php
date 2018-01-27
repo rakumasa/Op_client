@@ -3,7 +3,6 @@
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 
-
 NavBar::begin([
     'brandLabel' => Yii::$app->name,
     'brandUrl' => Yii::$app->homeUrl,
@@ -17,7 +16,8 @@ echo Nav::widget([
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
-        ['label' => 'Signup', 'url' => ['/site/userForm']],
+        ['label' => 'Product', 'url' => ['/product']],
+        ['label' => 'Signup', 'url' => ['/site/signup']],
         Yii::$app->user->isGuest ? (
             ['label' => 'Login', 'url' => ['/site/login']]
         ) : (
