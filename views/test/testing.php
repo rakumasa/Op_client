@@ -4,6 +4,7 @@ echo "we are here";
 
 ?>
 
+<!-- Call the variable from controller in view -->
 <h1>Welcome to my first controller</h1>
 <h2><?=$name?></h2>
 <h2><?=$number?></h2>

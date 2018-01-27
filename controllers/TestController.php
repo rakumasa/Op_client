@@ -22,7 +22,7 @@ class TestController extends Controller
     $name = "Microphone";
     $array = ['mic','system','video'];
 
-    // render testing.php in view. You can provide the variable to view
+    // render testing.php in view. You can pass the variable to view
     return $this->render('testing',['number'=>$number,'name'=>$name, 'array'=>$array]);
   }
 
