@@ -23,6 +23,8 @@ $this->title = 'My Yii Application';
             <div class="col-lg-4">
               <p>Let's use Html helpers link!</p>
               <?=Html::a('Move to Signup page.',['site/signup'],[''])?>
+
+              <?=Html::ul(['One','Two','Three','Four'],['class'=>'list-group-item']); ?>
             </div>
 
 
