@@ -1,6 +1,7 @@
 <?php
 // call html helper
 use yii\helpers\Html;
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'My Yii Application';
@@ -18,6 +19,13 @@ $this->title = 'My Yii Application';
     <div class="body-content">
 
         <div class="row">
+
+            <div class="col-lg-4">
+              <p>Let's use Html helpers link!</p>
+              <?=Html::a('Move to Signup page.',['site/signup'],[''])?>
+            </div>
+
+
             <div class="col-lg-4">
                 <!-- Use Yii HTML tag to make <h2>Header</h2> -->
                 <?=Html::tag('h2','Heading',['class'=>'','style'=>'font-size:50px;'])?>
