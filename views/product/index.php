@@ -1,5 +1,5 @@
 <?php
-
+$this->title = 'Product index';
 // echo $menu;
 
 ?>
