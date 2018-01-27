@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\UserForm;
+use app\models\SignupForm;
 
 class SiteController extends Controller
 {
@@ -150,6 +151,19 @@ class SiteController extends Controller
         }
           return $this->render('userForm',['model'=>$model]);
 
+    }
+
+    public function actionSignup()
+    {
+        $model = new SignupForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('signupFormSubmitted');
+
+            return $this->refresh();
+        }
+        return $this->render('signup', [
+            'model' => $model,
+        ]);
     }
 
 }

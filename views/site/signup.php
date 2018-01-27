@@ -3,12 +3,12 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$this->title = "signup";
+$this->title = "Signup";
 ?>
 
 <h1><?= Html::encode($this->title) ?></h1>
 
-<p>Please fill out the following fields to login:</p>
+<p>Please fill out the following fields to signup:</p>
 
 <?
   if(Yii::$app->session->hasFlash('success'))
@@ -18,8 +18,11 @@ $this->title = "signup";
 ?>
 
 <?php $form = ActiveForm::begin(); ?>
-  <?= $form->field($model,'name'); ?>
+
+  <?= $form->field($model,'last_name'); ?>
+
   <?= $form->field($model,'email'); ?>
+
 
   <?= Html::submitButton('Submit',['class'=>'btn btn-success']); ?>
 <?php ActiveForm::end(); ?>

@@ -1,5 +1,5 @@
 <?php
-
+// call html helper
 use yii\helpers\Html;
 /* @var $this yii\web\View */
 
@@ -20,7 +20,7 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-lg-4">
                 <!-- Use Yii HTML tag to make <h2>Header</h2> -->
-                <?=Html::tag('h2','Heading',[])?>
+                <?=Html::tag('h2','Heading',['class'=>'','style'=>'font-size:50px;'])?>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
