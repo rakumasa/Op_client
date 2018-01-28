@@ -10,23 +10,9 @@ use yii\base\Model;
  */
 class SignupForm extends Model
 {
-    public $first_name;
-    public $last_name;
-    public $employee_id;
-    public $email;
-    public $tenant;
     public $username;
-    public $auth_key;
-    public $password_hash;
-    public $password_reset_token;
-    public $group;
-    public $state;
-    public $use_external_auth;
-    public $external_id;
-    public $created_at;
-    public $updated_at;
-    public $last_login;
-
+    public $email;
+    public $password;
 
     /**
      * @return array the validation rules.
@@ -35,9 +21,9 @@ class SignupForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['first_name', 'last_name', 'employee_id', 'email', 'tenant', 'username', 'auth_key', 'password_hash', 'password_reset_token', 'state', 'created_at'], 'required'],
+            [['email', 'username', 'password'], 'required'],
             // email has to be a valid email address
-            ['email', 'email'],
+            // ['email', 'email'],
             // verifyCode needs to be entered correctly
             // ['verifyCode', 'captcha'],
         ];
@@ -49,7 +35,7 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            // 'verifyCode' => 'Verification Code',
         ];
     }
 
@@ -58,18 +44,18 @@ class SignupForm extends Model
      * @param string $email the target email address
      * @return bool whether the model passes validation
      */
-    public function contact($email)
+    public function signup()
     {
         if ($this->validate()) {
-            Yii::$app->mailer->compose()
-                ->setTo($email)
-                ->setFrom([$this->email => $this->last_name])
-                ->setSubject($this->subject)
-                ->setTextBody($this->body)
-                ->send();
-
-            return true;
+            return null;
         }
-        return false;
+
+        $user = new User();
+        $user->username = $this->username;
+        $user->email = $this->email;
+        $user->setPassword($this->password);
+        $user->generateAuthKey();
+
+        return $user->save() ? $user : null;
     }
 }
