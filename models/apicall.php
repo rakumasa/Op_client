@@ -8,7 +8,7 @@ use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
 use yii\data\ArrayDataProvider;
 
-class APIModel extends Model
+class APIModel extends APIModel
 {
     public $baseUrl = 'http://localhost:8080';
     Public $uri;
