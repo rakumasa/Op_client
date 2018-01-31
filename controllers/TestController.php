@@ -5,26 +5,48 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use linslin\yii2\curl;
 
 // Controller extend to web
 class TestController extends Controller
 {
-  //Learning how to use echo(console.log)
-  public function actionServer()
+
+
+  public function actionGet()
   {
-    echo "testing Controller";
+    //Init curl
+    $curl = new curl\Curl();
+
+    //GET
+    $response = $curl->get('http://localhost:8080/users');
+
+    // echo $response;
+
+    return $this->render('index',['response'=> $response]);
   }
 
-  public function actionTesting()
+  // Post with body params
+  public function actionPost()
   {
-    //declare variable
-    $number = 12345;
-    $name = "Microphone";
-    $array = ['mic','system','video'];
+    // Init curl
+    $curl = new curl\Curl();
 
-    // render testing.php in view. You can pass the variable to view
-    return $this->render('testing',['number'=>$number,'name'=>$name, 'array'=>$array]);
+    //POST
+    // $response = $curl->setOption(
+    //   CURLOPT_POSTFIELDS,
+    //   http_build_query(array(
+    //     'id' => 'value',
+    //
+    //   ))
+    //   )->post('http://localhost:8080/users/create');
+
+
+    return $this->render('post');
   }
+
+
+
+
 
 
 }

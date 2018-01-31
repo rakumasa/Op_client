@@ -14,9 +14,11 @@ echo Nav::widget([
     'options' => ['class' => 'navbar-nav navbar-right'],
     'items' => [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        // ['label' => 'About', 'url' => ['/site/about']],
+        // ['label' => 'Contact', 'url' => ['/site/contact']],
         ['label' => 'Product', 'url' => ['/product']],
+        ['label' => 'Get users from api', 'url' => ['/test/get']],
+        ['label' => 'Post a user to api', 'url' => ['/test/post']],
         ['label' => 'Signup', 'url' => ['/site/signup']],
         Yii::$app->user->isGuest ? (
             ['label' => 'Login', 'url' => ['/site/login']]

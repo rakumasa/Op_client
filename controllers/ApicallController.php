@@ -3,16 +3,28 @@
 namespace app\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
-use app\models\apicall2;
+use yii\web\Response;
+use yii\filters\VerbFilter;
+use app\models\apicall;
 use linslin\yii2\curl;
 
-class apicallController extends Controller
+
+class ApicallController extends Controller
 {
+
+  public function actionSay($message = "Hello")
+  {
+    return $this->render('index',['message'=> $message]);
+  }
+
+
 
   public function actionIndex()
   {
     return $this->render('index');
+    // echo "I am here apicall controller index";
   }
 
   public function actionCreate()
@@ -45,10 +57,6 @@ class apicallController extends Controller
         }
       }
     }
-
-
-  }
-
 
 
 }
