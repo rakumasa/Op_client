@@ -1,5 +1,4 @@
 <?php
-
 use yii\helpers\Html;
 $this->title = 'Product detail';
 // echo 'I am detail of Product';

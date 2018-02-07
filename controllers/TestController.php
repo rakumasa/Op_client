@@ -36,7 +36,6 @@ class TestController extends Controller
     //   CURLOPT_POSTFIELDS,
     //   http_build_query(array(
     //     'id' => 'value',
-    //
     //   ))
     //   )->post('http://localhost:8080/users/create');
 
