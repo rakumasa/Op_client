@@ -25,6 +25,19 @@ class TestController extends Controller
     return $this->render('index',['response'=> $response]);
   }
 
+
+  public function actionGetone()
+  {
+    //Init curl
+    $curl = new curl\Curl();
+
+    //GET One
+    $response = $curl->get('http://localhost:8080/users');
+
+
+  }
+
+
   // Post with body params
   public function actionPost()
   {
