@@ -34,6 +34,8 @@ class TestController extends Controller
     //GET One
     $response = $curl->get('http://localhost:8080/users');
 
+    //string
+    $string = http_build_query($response);
 
   }
 
@@ -45,6 +47,8 @@ class TestController extends Controller
     $curl = new curl\Curl();
 
     //POST
+    // setOption is set an option for a cURL transfer
+
     // $response = $curl->setOption(
     //   CURLOPT_POSTFIELDS,
     //   http_build_query(array(
